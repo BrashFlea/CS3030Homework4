@@ -70,7 +70,7 @@ then
 	help
 fi
 
-#using the year grab the files
+using the year grab the files
 if [[ $year == 2015 ]]
 then 
 	wget icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_$year.tar.gz 
@@ -98,6 +98,7 @@ echo "Unpacking Files"
 echo "Switching Directories"
 pushd temp
 
+echo "">"test.txt"
 echo "Processing Data"
 #Awk script does a couple things to the data:
 #0 cat the data in the directory based on number (1-10 at this point in time)
@@ -105,18 +106,26 @@ echo "Processing Data"
 #2 determine if the email field is null and replace it (pipe into awk)
 #3 determine if the record is a female from canada and print the first name, last name and email.
 #Note: this strips the headers in the process
-#5 pipe into new file (append) for zip
+#4 create a temp.txt file to hold data output
+#5 move temp.txt to previous directory and rename to MOCK_DATA_FILTER_$DATE
 for i in {1..10};
 do
-echo "Processing MOCK_DATA$i.csv"
-`cat MOCK_DATA$i.csv` | 
-`awk -F, '{if(NR>1)print $2 "," $3 "," $4 "," $5 "," $6}'` | 
-`awk -F, '{OFS = FS}{if(length($3) == 0){$3="waldo@weber.edu"}print}'` |
-`awk -F, '{if($4 == "Female" && $5 == "Canada"){print $1 "," $2 "," $3}}'` 
+cat MOCK_DATA$i.csv |  
+awk -F, '{if(NR>1)print $2 "," $3 "," $4 "," $5 "," $6'} | 
+awk -F, '{OFS = FS}{if(length($3) == 0){$3="waldo@weber.edu"}print}' |
+awk -F, '{if($4 == "Female" && $5 == "Canada"){print $1 "," $2 "," $3 >> "temp.txt"}}'
 done
-popd
->> MOCK_DATA_FILTER_$DATE
+mv "temp.txt" ../MOCK_DATA_FILTER_$DATE
 
-echo "Your data will be located in MOCK_DATA_FILTER_$DATE"
+echo "Switching Directories"
+popd
+
+#Zip the files up
+#Note: deletes original that was moved to directory
+zip -qm MOCK_DATA_FILTER_$DATE MOCK_DATA_FILTER_*
+echo "Your data will be located in MOCK_DATA_FILTER_$DATE.zip"
+
+#Clean your mess
+rm -rf temp
 exit 0
 
