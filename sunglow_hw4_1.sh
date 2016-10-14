@@ -92,12 +92,11 @@ fi
 DATE=`date +%Y_%m_%d_%H:%M:%S`
 
 echo "Unpacking Files"
-
-`tar -xzvf MOCK_DATA_2015.tar.gz -C temp`
-`tar -xzvf MOCK_DATA_2016.tar.gz -C temp`
+`tar -xzf MOCK_DATA_2015.tar.gz -C temp`
+`tar -xzf MOCK_DATA_2016.tar.gz -C temp`
 
 echo "Switching Directories"
-`cd temp`
+pushd temp
 
 echo "Processing Data"
 #Awk script does a couple things to the data:
@@ -107,13 +106,17 @@ echo "Processing Data"
 #3 determine if the record is a female from canada and print the first name, last name and email.
 #Note: this strips the headers in the process
 #5 pipe into new file (append) for zip
-for i in {1..10}
+for i in {1..10};
 do
-`cat MOCK_DATA[i].csv | 
-awk -F, '{print $2 "," $3 "," $4 "," $5 "," $6}' | 
-awk -F, '{OFS = FS}{if(length($3) == 0){$3="waldo@weber.edu"}print}' |
-awk -F, '{if($4 == "Female" && $5 == "Canada")print $1 "," $2 "," $3}' >>
-MOCK_DATA_FILTER_$DATE`
+echo "Processing MOCK_DATA$i.csv"
+`cat MOCK_DATA$i.csv` | 
+`awk -F, '{if(NR>1)print $2 "," $3 "," $4 "," $5 "," $6}'` | 
+`awk -F, '{OFS = FS}{if(length($3) == 0){$3="waldo@weber.edu"}print}'` |
+`awk -F, '{if($4 == "Female" && $5 == "Canada"){print $1 "," $2 "," $3}}'` 
 done
+popd
+>> MOCK_DATA_FILTER_$DATE
+
+echo "Your data will be located in MOCK_DATA_FILTER_$DATE"
 exit 0
 
