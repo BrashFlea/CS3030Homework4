@@ -98,7 +98,7 @@ echo "Unpacking Files"
 echo "Switching Directories"
 pushd temp
 
-echo "">"test.txt"
+echo "" > "temp.txt"
 echo "Processing Data"
 #Awk script does a couple things to the data:
 #0 cat the data in the directory based on number (1-10 at this point in time)
