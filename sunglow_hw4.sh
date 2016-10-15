@@ -70,7 +70,7 @@ then
 	help
 fi
 
-using the year grab the files
+#using the year grab the files
 if [[ $year == 2015 ]]
 then 
 	wget icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_$year.tar.gz 
@@ -122,7 +122,7 @@ popd
 
 #Zip the files up
 #Note: deletes original that was moved to directory
-zip -qm MOCK_DATA_FILTER_$DATE MOCK_DATA_FILTER_*
+`zip -qm MOCK_DATA_FILTER_$DATE MOCK_DATA_FILTER_*`
 echo "Your data will be located in MOCK_DATA_FILTER_$DATE.zip"
 
 #Clean your mess
