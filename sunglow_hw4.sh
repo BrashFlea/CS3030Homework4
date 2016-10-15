@@ -129,25 +129,18 @@ chmod 666  MOCK_DATA_FILTER_$DATE.zip
 #Clean your mess
 rm -rf temp
 
-if [[ $user -ne "" && $pass -ne "" ]]
+if [[ $user != "" && $pass != "" ]]
 then
 	echo "Putting the files in the home directory of $user"
 	ftp -inv $host <<EOF
 	quote USER $user
 	quote PASS $pass
-
 	cd ~/
 	put MOCK_DATA_FILTER_$DATE.zip
 	bye
 EOF
 else
-	if [[ -d /srv/ftp/MockData ]]
-	then
-		echo "Checking anonymous directory"
-	else
-		echo "Checking anonymous directory"
-		mkdir /srv/ftp/MockData
-	fi
+	echo "Putting files in the anonymous directory"
 	user="anonymous"
 	pass="waldo@weber.edu"
 	ftp -inv $host <<EOF
