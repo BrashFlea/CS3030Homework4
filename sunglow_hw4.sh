@@ -27,6 +27,7 @@ year=""
 email=""
 user=""
 pass=""
+host="137.190.19.97"
 
 #check for help
 if [[ $1 == "--help" ]]
@@ -79,7 +80,7 @@ then
 fi
 
 
-if [[ $year == 2015 ]]
+if [[ $year == 2016 ]]
 then 
 	wget icarus.cs.weber.edu/~hvalle/cs3030/MOCK_DATA_$year.tar.gz 
 	year=$((year-1))
@@ -111,7 +112,7 @@ echo "Processing Data"
 for i in {1..10};
 do
 cat MOCK_DATA$i.csv |  
-awk -F, '{if(NR>1)print $2 "," $3 "," $4 "," $5 "," $6'} | 
+awk -F, '{if(NR>1)print $2 "," $3 "," $4 "," $5 "," $6}' | 
 awk -F, '{OFS = FS}{if(length($3) == 0){$3="waldo@weber.edu"}print}' |
 awk -F, '{if($4 == "Female" && $5 == "Canada"){print $1 "," $2 "," $3 >> "temp.txt"}}'
 done
@@ -124,8 +125,49 @@ popd
 #Note: deletes original that was moved to directory
 `zip -qm MOCK_DATA_FILTER_$DATE MOCK_DATA_FILTER_*`
 echo "Your data will be located in MOCK_DATA_FILTER_$DATE.zip"
-
+chmod 666  MOCK_DATA_FILTER_$DATE.zip
 #Clean your mess
 rm -rf temp
+
+if [[ $user -ne "" && $pass -ne "" ]]
+then
+	echo "Putting the files in the home directory of $user"
+	ftp -inv $host <<EOF
+	quote USER $user
+	quote PASS $pass
+
+	cd ~/
+	put MOCK_DATA_FILTER_$DATE.zip
+	bye
+EOF
+else
+	if [[ -d /srv/ftp/MockData ]]
+	then
+		echo "Checking anonymous directory"
+	else
+		echo "Checking anonymous directory"
+		mkdir /srv/ftp/MockData
+	fi
+	user="anonymous"
+	pass="waldo@weber.edu"
+	ftp -inv $host <<EOF
+	quote USER $user
+	quote PASS $pass
+	put MOCK_DATA_FILTER_$DATE.zip
+	bye
+EOF
+fi
+
+if [[ $? != 0 ]]
+then
+	echo "The ftp failed."
+	echo "Exiting with error."
+	exit 1
+else
+	echo "The ftp was successfull."
+fi
+
+rm MOCK_DATA*
+
 exit 0
 
