@@ -1,1 +1,1 @@
-* */6 * * * ./sunglow_hw4.sh -y 2015 -e waldo@mail.weber.edu -u $USER
+* */6 * * * ./sunglow_hw4.sh -y 2015 -e waldo@mail.weber.edu
