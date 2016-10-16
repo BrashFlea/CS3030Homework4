@@ -27,7 +27,7 @@ year=""
 email=""
 user=""
 pass=""
-host="137.190.19.97"
+host="137.190.19.101"
 
 #check for help
 if [[ $1 == "--help" ]]
@@ -158,6 +158,7 @@ then
 	exit 1
 else
 	echo "The ftp was successfull."
+	mail -s "FTP Transfer" $email <<< "Successfully transferred file to FTP $host server"
 fi
 
 rm MOCK_DATA*
