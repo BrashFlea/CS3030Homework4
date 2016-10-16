@@ -1,0 +1,103 @@
+commit 0a3cefa07ac9764bea2495d8d732edfdcf85053c
+Author: Jonathan <jonathanmirabile@mail.weber.edu>
+Date:   Sun Oct 16 04:31:34 2016 +0000
+
+    Added email functionality to script
+
+commit 062a0f4d720a34b39245a1ebdd58c4867730b33e
+Merge: fbf9774 bb19ab4
+Author: Jonathan <jonathanmirabile@mail.weber.edu>
+Date:   Sun Oct 16 04:22:30 2016 +0000
+
+    Merge https://github.com/BrashFlea/CS3030Homework4
+
+commit bb19ab413bbb17a6f3b8a02ca08950f6f7c907ff
+Author: Parker Jensen <parker.jensen@aggiemail.usu.edu>
+Date:   Sat Oct 15 17:54:14 2016 -0600
+
+    login to ftp with anonymous not working
+
+commit 2c0861607b64ba24fd4703e373eb8500c8cda81e
+Merge: 993aa43 70178ba
+Author: Parker Jensen <parker.jensen@aggiemail.usu.edu>
+Date:   Sat Oct 15 17:39:47 2016 -0600
+
+    Merge branch 'master' of https://github.com/BrashFlea/CS3030Homework4
+
+commit 993aa438554a2c4f47a1529ed891cce9148b8511
+Author: Parker Jensen <parker.jensen@aggiemail.usu.edu>
+Date:   Sat Oct 15 17:38:49 2016 -0600
+
+    Added ftp code (not working)
+
+commit 70178ba2c5a10d072c5df0d8e82a799c27e6f145
+Author: riley <rileycurtis@mail.weber.edu>
+Date:   Sat Oct 15 22:59:06 2016 +0000
+
+    format change
+
+commit 48065e54684aeab65478333a4b35a0cb0f6fb384
+Author: Riley Curtis <rileycurtis@mail.weber.edu>
+Date:   Sat Oct 15 16:47:56 2016 -0600
+
+    Removed empty file. Fixed errors in sunglow_hw4.sh
+
+commit b36bbee048e26e388aea8bcf82a8ed7db92c3bfe
+Author: riley <rileycurtis@mail.weber.edu>
+Date:   Sat Oct 15 18:14:21 2016 +0000
+
+    switched file names added cronjob.txt
+
+commit bbf3bfaa94cdbc6779a59f89117dba6ae2d4ea9d
+Author: Jonathan Mirabile <jonathanmirabile@mail.weber.edu>
+Date:   Fri Oct 14 14:09:37 2016 -0600
+
+    fixed minor formatting bug
+
+commit 24ddd986d74162c47599c10c842b161c0f0dbdd9
+Author: Jonathan Mirabile <jonathanmirabile@mail.weber.edu>
+Date:   Fri Oct 14 14:03:31 2016 -0600
+
+    Project working. Implement steps 4e (FTP section) onward
+
+commit d3febd1299ee981ab166e1855a402767b8323a0e
+Author: Jonathan Mirabile <jonathanmirabile@mail.weber.edu>
+Date:   Thu Oct 13 22:00:27 2016 -0600
+
+    awk almost working for code. Needs debugging
+
+commit d96f24f5f639588bfec0d264d65759eb665910e3
+Author: Jonathan Mirabile <jonathanmirabile@mail.weber.edu>
+Date:   Thu Oct 13 21:04:15 2016 -0600
+
+    Initial Commit
+
+commit 5743fae482d33f0fd8672b5bb9342fcb056ed359
+Author: Parker Jensen <parker.jensen@aggiemail.usu.edu>
+Date:   Tue Oct 11 13:03:28 2016 -0600
+
+    Check parameters and wget files
+
+commit 242866683863559390524128cf0294d7071671ac
+Author: Parker Jensen <parker.jensen@aggiemail.usu.edu>
+Date:   Tue Oct 11 12:32:43 2016 -0600
+
+    Initial Commit
+
+commit 84124649bcea10278de26beb30316e295f5a156c
+Author: Parker Jensen <parker.jensen@aggiemail.usu.edu>
+Date:   Tue Oct 11 12:28:33 2016 -0600
+
+    Initial Commit
+
+commit bf4a1ea31a27bd97be2fd827de8acede57e5b29b
+Author: BrashFlea <jonathanmirabile@mail.weber.edu>
+Date:   Thu Oct 6 13:08:45 2016 -0600
+
+    Initial commit
+
+commit fbf97746bb4679b1954aa321284da951916ad3df
+Author: Jonathan <jonathanmirabile@mail.weber.edu>
+Date:   Thu Sep 15 22:04:12 2016 +0000
+
+    Homework #1
