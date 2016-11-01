@@ -1,7 +1,7 @@
 # CS3030Homework4
-# Jonathan Mirabile
-# Parker Jensen
-# Riley Curtis
+Jonathan Mirabile
+Parker Jensen
+Riley Curtis
 
 \* denotes required
 
