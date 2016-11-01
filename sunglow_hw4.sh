@@ -1,16 +1,17 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: sunglow_hw1_1.sh
+#          FILE: sunglow_hw4.sh
 # 
-#         USAGE: ./sunglow_hw1_1.sh 
+#         USAGE: ./sunglow_hw4.sh 
 # 
-#   DESCRIPTION: 
+#   DESCRIPTION: Homework script that takes a year*, email*, username, and password then retrieves files based on the year from the WSU Icarus Server. Processes the files using AWK, zips them up and uploads them to the users FTP server (if usename and password are provided) otherwise uploads to the $host FTP server using anonymous login.
 # 
-#        AUTHOR: Parker Jensen (), parker.jensen@aggiemail.usu.edu
+#        AUTHORS: Parker Jensen (), parker.jensen@aggiemail.usu.edu
+#                 Jonathan Mirabile (), jonathanmirabile@mail.weber.edu
 #  ORGANIZATION: 
 #       CREATED: 10/11/2016 12:31
-#      REVISION:  ---
+#      REVISION: V1.01
 #===============================================================================
 
 #set -o nounset        # Treat unset variables as an error
@@ -161,6 +162,7 @@ else
 	mail -s "FTP Transfer" $email <<< "Successfully transferred file to FTP $host server"
 fi
 
+#Clean your mess again
 rm MOCK_DATA*
 
 exit 0
