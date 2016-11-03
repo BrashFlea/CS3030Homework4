@@ -126,7 +126,7 @@ popd
 #Note: deletes original that was moved to directory
 `zip -qm MOCK_DATA_FILTER_$DATE MOCK_DATA_FILTER_*`
 echo "Your data will be located in MOCK_DATA_FILTER_$DATE.zip"
-chmod 666  MOCK_DATA_FILTER_$DATE.zip
+chmod 777 MOCK_DATA_FILTER_$DATE.zip
 #Clean your mess
 rm -rf temp
 
@@ -136,17 +136,20 @@ then
 	ftp -inv $host <<EOF
 	quote USER $user
 	quote PASS $pass
+	binary
 	cd ~/
 	put MOCK_DATA_FILTER_$DATE.zip
 	bye
 EOF
 else
-	echo "Putting files in the anonymous directory"
+	echo "Putting files in the Anonymous directory"
 	user="anonymous"
 	pass="waldo@weber.edu"
 	ftp -inv $host <<EOF
 	quote USER $user
 	quote PASS $pass
+	binary
+	cd ~/MockData
 	put MOCK_DATA_FILTER_$DATE.zip
 	bye
 EOF
