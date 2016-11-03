@@ -1,3 +1,39 @@
+commit 17c617e36d3561585796d0145d3cecd16974bc0c
+Author: Jonathan <jonathanmirabile@mail.weber.edu>
+Date:   Thu Nov 3 03:32:41 2016 +0000
+
+    Fixed FTP problem with script. Ready to create .tar file and submit
+
+commit 960ab5745e6ee74654baabd3869362c64b1b2881
+Author: Jonathan <jonathanmirabile@mail.weber.edu>
+Date:   Tue Nov 1 18:59:31 2016 +0000
+
+    Another formatting fix
+
+commit e27d92318e9d87d5f04ff9e083b0db00cbe865a1
+Author: Jonathan <jonathanmirabile@mail.weber.edu>
+Date:   Tue Nov 1 18:58:22 2016 +0000
+
+    Minor formatting fixes
+
+commit 3e910b99a843d48ca0084090dabaef45bba511c3
+Author: Jonathan <jonathanmirabile@mail.weber.edu>
+Date:   Tue Nov 1 18:56:24 2016 +0000
+
+    Updated README and sunglow_hw4 with script usage documentation
+
+commit e4ec6620f0784a95059b5e802685a4d6f7e7c395
+Author: Jonathan <jonathanmirabile@mail.weber.edu>
+Date:   Sun Oct 16 04:58:38 2016 +0000
+
+    removed hw1 file
+
+commit fe64702cc7ce6acae1a125cc8456c19356b79738
+Author: Jonathan <jonathanmirabile@mail.weber.edu>
+Date:   Sun Oct 16 04:54:50 2016 +0000
+
+    Created .tar file for submission
+
 commit 0a3cefa07ac9764bea2495d8d732edfdcf85053c
 Author: Jonathan <jonathanmirabile@mail.weber.edu>
 Date:   Sun Oct 16 04:31:34 2016 +0000
